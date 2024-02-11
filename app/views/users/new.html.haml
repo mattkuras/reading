@@ -1,0 +1,14 @@
+%h2 Sign up
+
+= form_with model: @user, url: users_path do |form|
+  %label{for: "email"}
+    Email
+  = form.email_field :email, required: true
+  %label{for: "password"}
+    Password
+  = form.password_field :password, required: true
+  %label{for: "password_confirmation"}
+    Password Confirmation
+  = form.password_field :password_confirmation, required: true
+
+  = form.submit "Sign Up"

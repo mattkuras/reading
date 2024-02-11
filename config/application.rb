@@ -35,9 +35,6 @@ module ReadingApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.generators do |g|
-      g.template_engine :haml
-    end
 
     # Don't generate system test files.
     config.generators.system_tests = nil
