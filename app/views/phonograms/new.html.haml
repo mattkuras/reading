@@ -1,0 +1,18 @@
+= form_with model: @phonogram do |f|
+  .flex.flex-col
+    = f.label :sound
+    = f.file_field :sound
+
+    = f.label :name
+    = f.text_field :name
+
+    = f.label :level
+    = f.text_field :level
+    = f.submit
+
+.flex.flex-col
+  - Phonogram.find_each do |phonogram|
+    - if phonogram.sound.attached?
+      = audio_tag url_for(phonogram.sound), controls: true
+    - else
+      Poop
